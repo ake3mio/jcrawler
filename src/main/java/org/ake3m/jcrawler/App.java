@@ -1,6 +1,7 @@
 package org.ake3m.jcrawler;
 
 import lombok.extern.slf4j.Slf4j;
+import org.ake3m.jcrawler.crawler.Crawler;
 
 @Slf4j
 public class App {
@@ -15,5 +16,6 @@ public class App {
                     """);
             return;
         }
+        Crawler.crawl(args[0]).forEach((s, page) -> log.info(page.toString()));
     }
 }
